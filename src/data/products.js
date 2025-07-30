@@ -7,7 +7,7 @@ export const PRODUCTS =[
     id : 1,
     productName : 'Mobile',
     price : 1000,
-    productImage : mobile
+    productImage : mobile,
     },
     {
         id : 2,

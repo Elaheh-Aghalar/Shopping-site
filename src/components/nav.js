@@ -7,37 +7,30 @@ import './nav.css';
 
 const Nav = () => {
   const { cartItems } = useContext(ShopContext);
-  const itemCount = cartItems?.reduce((prev, current) => {
-    return prev + current.count}, 0);
+  const itemCount = cartItems?.reduce((prev, current) => prev + current.count, 0);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
-      <div className="container d-flex justify-content-between align-items-center w-100">
+    <nav className="navbar-modern">
+      <div className="navbar-container">
         
-        {/* Left - Logo */}
-        <div className="navbar-brand">Online Shop</div>
+        {/* Logo */}
+        <div className="navbar-logo">
+          <Link to="/" className="logo-text">🛍️ OnlineShop</Link>
+        </div>
 
-        {/* Center - Links */}
-        <ul className="navbar-nav flex-row gap-4 middle-menu">
-          <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/products" className="nav-link">Products</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/categories" className="nav-link">Categories</Link>
-          </li>
+        {/* Links */}
+        <ul className="navbar-links">
+          <li><Link to="/" className="nav-link-modern">Home</Link></li>
+          <li><Link to="/products" className="nav-link-modern">Products</Link></li>
+          <li><Link to="/categories" className="nav-link-modern">Categories</Link></li>
         </ul>
 
-        {/* Right - Cart */}
-        <div className="d-flex align-items-center">
-          <Link to="/cart" className="nav-link position-relative">
-            <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+        {/* Cart */}
+        <div className="navbar-cart">
+          <Link to="/cart" className="cart-link">
+            <FontAwesomeIcon icon={faShoppingCart} />
             {itemCount > 0 && (
-              <span className="cart-items-count badge bg-danger position-absolute top-0 start-100 translate-middle">
-                {itemCount}
-              </span>
+              <span className="cart-badge">{itemCount}</span>
             )}
           </Link>
         </div>
@@ -45,4 +38,5 @@ const Nav = () => {
     </nav>
   );
 };
+
 export default Nav;

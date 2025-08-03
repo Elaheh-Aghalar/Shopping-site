@@ -1,17 +1,19 @@
 import React from "react";
-import Product from './product'
+import Product from "./product";
 import { PRODUCTS } from "../../data/products";
-const Shop =() => {
-return(
-    <React.Fragment>
-   <html lang="en" dir='ltr'></html>
-    <h1>Shop</h1>
-    <div className="row">
-        {PRODUCTS.map((productData)=> (
-         <Product key={productData.id} data={productData} />
+import "./shop.css";
+
+const Shop = () => {
+  return (
+    <div className="shop-container">
+      <h2 className="shop-title">Our Products</h2>
+      <div className="products-grid">
+        {PRODUCTS.map((productData) => (
+          <Product key={productData.id} data={productData} />
         ))}
+      </div>
     </div>
-    </React.Fragment>
-);
+  );
 };
+
 export default Shop;

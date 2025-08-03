@@ -1,0 +1,53 @@
+/* useCart.css */
+
+/* دکمه افزودن به سبد خرید */
+.btn-add-to-cart {
+  padding: 0.5rem 1rem;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #0b5ed7;
+}
+
+/* دکمه حذف از سبد خرید */
+.btn-remove-from-cart {
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-remove-from-cart:hover {
+  background-color: #bb2d3b;
+}
+
+/* تعداد آیتم داخل سبد */
+.cart-item-count {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 576px) {
+  .btn-add-to-cart,
+  .btn-remove-from-cart {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .cart-item-count {
+    font-size: 1.1rem;
+  }
+}

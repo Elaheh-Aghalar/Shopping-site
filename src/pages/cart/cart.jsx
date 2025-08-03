@@ -1,21 +1,31 @@
+// src/pages/cart/Cart.js
 import React, { useContext } from "react";
 import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/shopContext";
 import Product from "../shop/product";
+import "./cart.css";
 
-const Cart =() => {
-    const {cartItems } = useContext(ShopContext)
-return(
-    <React.Fragment>
-    <h1>Your Cart items</h1>
-    <div className="row">
-        {PRODUCTS.map((p)=>{
-         if(cartItems?.some((i)=> i.id===p.id && i.count >0))
-           return <Product data={p}></Product>
-        })}
+const Cart = () => {
+  const { cartItems } = useContext(ShopContext);
+  const hasItems = cartItems?.some((item) => item.count > 0);
+
+  return (
+    <div className="cart-container">
+      <h2 className="cart-title">🛒 Your Cart</h2>
+
+      {hasItems ? (
+        <div className="cart-items-grid">
+          {PRODUCTS.map((p) =>
+            cartItems?.some((i) => i.id === p.id && i.count > 0) ? (
+              <Product key={p.id} data={p} />
+            ) : null
+          )}
+        </div>
+      ) : (
+        <p className="empty-message">Your cart is empty 😢</p>
+      )}
     </div>
-    </React.Fragment>
-
-);
+  );
 };
+
 export default Cart;

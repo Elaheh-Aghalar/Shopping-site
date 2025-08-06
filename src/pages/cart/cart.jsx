@@ -1,4 +1,3 @@
-// src/pages/cart/Cart.js
 import React, { useContext } from "react";
 import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/shopContext";
@@ -22,7 +21,7 @@ const Cart = () => {
           )}
         </div>
       ) : (
-        <p className="empty-message">Your cart is empty 😢</p>
+        <p className="empty-message">Your cart is empty </p>
       )}
     </div>
   );

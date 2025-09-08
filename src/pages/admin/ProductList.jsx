@@ -7,13 +7,19 @@ export default function ProductList() {
   const [editingProduct, setEditingProduct] = useState(null);
   const [newTitle, setNewTitle] = useState("");
 
+const staticProducts = [
+  { id: 101, name: 'آیفون 16', price: '$1000', category: 'موبایل', status: 'موجود', image: 'https://via.placeholder.com/50' },
+  { id: 102, name: 'تبلت', price: '$1500', category: 'تبلت', status: 'ناموجود', image: 'https://via.placeholder.com/50' },
+  { id: 103, name: 'لپ تاپ ASUS', price: '$2000', category: 'لپ تاپ', status: 'موجود', image: 'https://via.placeholder.com/50' },
+];
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await fetch("https://fakestoreapi.com/products");
         if (!res.ok) throw new Error("خطا در دریافت محصولات");
         const data = await res.json();
-        setProducts(data);
+        setProducts([...staticProducts, ...data]);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -31,6 +37,7 @@ export default function ProductList() {
       price: 0,
       category: "عمومی",
       image: "https://via.placeholder.com/50",
+      status: "موجود",
     };
     setProducts([newProduct, ...products]);
   };
@@ -91,12 +98,12 @@ export default function ProductList() {
                       onChange={(e) => setNewTitle(e.target.value)}
                     />
                   ) : (
-                    p.title
+                    p.title || p.name
                   )}
                 </td>
                 <td>${p.price}</td>
                 <td>{p.category}</td>
-                <td>موجود</td>
+                <td>{p.status || "موجود"}</td>
                 <td>
                   {editingProduct?.id === p.id ? (
                     <button

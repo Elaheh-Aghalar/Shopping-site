@@ -1,0 +1,17 @@
+ {
+      "faHom": "Home",
+      "Products": "Products",
+      "categories": "Categories",
+      "viewDetails": "view Details",
+      "yourCart": "your Cart",
+      "cartEmpty": "your cart is empty",
+      "mobile": "Mobile",
+      "mobileDesc": "📱 Mobile Model 16:\n- 6.1-inch display\n- 48MP camera\n- 4000mAh battery\n- 128GB storage",
+      "laptop": "Laptop",
+      "laptopDesc": "💻 Professional Laptop:\n- Retina display\n- Core i5 8th Gen\n- 512GB SSD\n- Perfect for coding and design",
+      "tablet": "Tablet",
+      "tabletDesc": "📝 Tablet for study and design:\n- 10.5-inch display\n- Comes with pen\n- 256GB storage\n- Lightweight and portable",
+      "smartwatch": "Smart Watch",
+      "smartwatchDesc": "⌚️ Smart Watch:\n- AMOLED screen\n- Heart rate & sleep tracking\n- Bluetooth and GPS\n- Up to 7 days battery life"
+    }
+  

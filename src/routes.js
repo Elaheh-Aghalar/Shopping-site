@@ -1,4 +1,3 @@
-// src/routes.js
 import Shop from './pages/shop/shop';
 import Cart from './pages/cart/cart';
 import Nav from './components/nav';
@@ -6,7 +5,6 @@ import Sidebar from './components/Sidebar';
 import ProductList from './pages/admin/ProductList';
 
 const routes = [
-  // مسیرهای فروشگاه
   {
     path: '/',
     element: (
@@ -28,7 +26,6 @@ const routes = [
     type: 'shop'
   },
 
-  // مسیرهای ادمین
   {
     path: '/admin/products',
     element: (
